@@ -1,0 +1,29 @@
+<div>
+
+  {{msg}}
+  <form (ngSubmit)="formInfo()">
+    Name: <input type="text" name="studentName" [(ngModel)]="info.stuName">
+    Course: <input type="text" name="Course" [(ngModel)]="info.course">
+    phNo: <input type="number" name="phNo" [(ngModel)]="info.phNo">
+    <input type="submit" value="save" >
+  </form>
+</div>
+
+
+<table  *ngIf="status">
+  <thead>
+    <th>studentName/th>
+    <th>Course</th>
+    <th>Number</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let s of studInfo">
+      <td>{{s.stuName}}</td>
+      <td>{{s.course}}</td>
+      <td>{{s.phNo}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<button (click)="getInfo()" >Users</button>
+<button (click)="hide()">Hide</button>
